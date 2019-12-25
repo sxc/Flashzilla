@@ -13,6 +13,8 @@
 		3415816523AB0DDA008DFC16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3415816423AB0DDA008DFC16 /* Assets.xcassets */; };
 		3415816823AB0DDA008DFC16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3415816723AB0DDA008DFC16 /* Preview Assets.xcassets */; };
 		3415816B23AB0DDA008DFC16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3415816923AB0DDA008DFC16 /* LaunchScreen.storyboard */; };
+		3477FC5823B312FB002A7847 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477FC5723B312FB002A7847 /* Card.swift */; };
+		3477FC5A23B342D6002A7847 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477FC5923B342D6002A7847 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3415816723AB0DDA008DFC16 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3415816A23AB0DDA008DFC16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3415816C23AB0DDA008DFC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3477FC5723B312FB002A7847 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		3477FC5923B342D6002A7847 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				3415816923AB0DDA008DFC16 /* LaunchScreen.storyboard */,
 				3415816C23AB0DDA008DFC16 /* Info.plist */,
 				3415816623AB0DDA008DFC16 /* Preview Content */,
+				3477FC5723B312FB002A7847 /* Card.swift */,
+				3477FC5923B342D6002A7847 /* CardView.swift */,
 			);
 			path = Flashzilla;
 			sourceTree = "<group>";
@@ -149,6 +155,8 @@
 				3415815F23AB0DD5008DFC16 /* AppDelegate.swift in Sources */,
 				3415816123AB0DD5008DFC16 /* SceneDelegate.swift in Sources */,
 				3415816323AB0DD5008DFC16 /* ContentView.swift in Sources */,
+				3477FC5823B312FB002A7847 /* Card.swift in Sources */,
+				3477FC5A23B342D6002A7847 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Flashzilla/Preview Content\"";
-				DEVELOPMENT_TEAM = SX2P37942F;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Flashzilla/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
