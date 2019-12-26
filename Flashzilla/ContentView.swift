@@ -25,9 +25,19 @@ struct ContentView: View {
     @State private var timeRemaining = 100
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var isActive = true
+    @State private var feedback = UINotificationFeedbackGenerator()
     
     func removeCard(at index: Int) {
         cards.remove(at: index)
+        if cards.isEmpty {
+                                       isActive = false
+                                   }
+    }
+    
+    func resetCards() {
+        cards = [Card](repeating: Card.example, count: 10)
+        timeRemaining = 100
+        isActive = true
     }
     
     var body: some View {
@@ -57,12 +67,21 @@ struct ContentView: View {
                             withAnimation {
                                 self.removeCard(at: index)
                             }
+                           
                         }
                             .stacked(at: index, in: self.cards.count)
                         
                         
                     }
                     
+                }
+            .allowsHitTesting(timeRemaining > 0)
+                if cards.isEmpty {
+                    Button("Start Again", action: resetCards)
+                        .padding()
+                        .background(Color.white)
+                        .foregroundColor(.black)
+                        .clipShape(Capsule())
                 }
                
             }
@@ -79,8 +98,10 @@ struct ContentView: View {
             self.isActive = false
         }
     .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+        if self.cards.isEmpty == false {
             self.isActive = true
         }
+    }
        
     }
 }
