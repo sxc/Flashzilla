@@ -16,6 +16,7 @@ extension View {
         let offset = CGFloat(total - position)
         return self.offset(CGSize(width: 0, height: offset * 10))
     }
+    
 }
 
 
@@ -25,7 +26,7 @@ struct ContentView: View {
     @State private var timeRemaining = 100
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var isActive = true
-    @State private var feedback = UINotificationFeedbackGenerator()
+    
     
     func removeCard(at index: Int) {
         cards.remove(at: index)
@@ -43,7 +44,8 @@ struct ContentView: View {
     var body: some View {
              
         ZStack {
-            Image("background")
+            
+            Image(decorative: "background")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -70,6 +72,8 @@ struct ContentView: View {
                            
                         }
                             .stacked(at: index, in: self.cards.count)
+                                .allowsHitTesting(index == self.cards.count - 1)
+                                .accessibility(hidden: index < self.cards.count - 1)
                         
                         
                     }

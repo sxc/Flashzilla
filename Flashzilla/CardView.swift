@@ -13,7 +13,7 @@ struct CardView: View {
     var removal: (() -> Void)? = nil
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
-    
+    @State private var feedback = UINotificationFeedbackGenerator()
     
     var body: some View {
         ZStack {
@@ -56,12 +56,20 @@ struct CardView: View {
             DragGesture()
                 .onChanged { gesture in
                     self.offset = gesture.translation
+                    self.feedback.prepare()
                 }
 
                 .onEnded { _ in
                     if abs(self.offset.width) > 100 {
                         // remove the card
+                        if self.offset.width > 0 {
+                            self.feedback.notificationOccurred(.success)
+                        } else {
+                            self.feedback.notificationOccurred(.error)
+                        }
+
                         self.removal?()
+                        
                     } else {
                         self.offset = .zero
                     }
@@ -70,7 +78,9 @@ struct CardView: View {
             
         .onTapGesture {
             self.isShowingAnswer.toggle()
+            
         }
+        .animation(.spring())
     }
 }
 
